@@ -1,0 +1,126 @@
+<!--
+  Generated template for the BookPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Book</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content *ngIf="facility" cache-content="false">
+  <br />
+  <br />
+
+
+  <div class="desc">
+    <br />
+    <br />
+    <h3 class="title" style="color: #000;">{{facility.name}}</h3>
+    <h5 class="bobe" style="color: #000;">{{date}}</h5>
+    <h5 class="bobe" style="color: #000;">Beskrivning</h5> <span style="color: #000;">{{facility.description}}</span>
+    <!-- <br><img src="../img/openlab{{facilities.name}}.png" style="width: 60%; height: 60%;"> -->
+    <h5 class="bobe" style="color: #000;">Regler</h5> <span style="color: #000;">{{facility.rules}}</span>
+    <p *ngIf="error" style="color: red;">{{error}}</p>
+    <br>
+    <p class="bobe" *ngIf="message" style="color: #000;">{{message}}</p>
+  </div>
+  <div *ngIf="facility.dyntime == 'on'">
+  <div class="list">
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Start time
+      </div>
+       <ion-select [(ngModel)]="start_time" name="bookingInfo">
+         <ion-option value="" disabled selected>Select your booking time</ion-option>
+         <ion-option value="{{timeslot.value}}" *ngFor="let timeslot of timeslots" ng-if="timeslot.time" type="time">{{timeslot.time}}</ion-option>
+       </ion-select>
+    </label>
+    <label class="item item-input item-select">
+       <div class="input-label">
+         End time
+       </div>
+      <ion-select [(ngModel)]="end_time" name="bookingInfo">
+         <ion-option value="" disabled selected>Select your booking end time</ion-option>
+         <ion-option value="{{timeslot.value}}" *ngFor="let timeslot of timeslots" ng-if="timeslot.time" type="time">{{timeslot.time}}</ion-option>
+      </ion-select>
+    </label>
+    <label class="item">
+      <div *ngIf="facility.min">
+        <h4 class="unavailblemax" style="color: red;"> Max 3 bookings </h4>
+      </div>
+    <div *ngIf="facility.max">
+      <div *ngIf="end_time == null" >
+        <div class="booked">
+      <div style="margin-top:10px"><h2 class="unavailble"> Booka rum {{facility.name}}</h2></div>
+      </div>
+    </div>
+    </div>
+   {{facility.id}}
+    <div *ngIf="facility.max">
+      <div *ngIf="end_time" >
+        <button *ngIf="start_time" class="button" style="background-color:rgba(0,0,0,0); width: 113%;" (click)="getBookings(facility.id, date, start_time, end_time)">
+        <div class="unbooked">
+          <div style="margin-top:10px"><p *ngIf="error" style="color: red;">{{error}}</p> Booka rum {{facility.name}}</div>
+        </div>
+       </button>
+    </div>
+      </div>
+    </label>
+  </div>
+  </div>
+
+  <div class="coli" *ngIf="timeslots">
+    <br />
+
+     <div *ngFor="let timeslot of timeslots">
+        <div *ngIf="facility.dyntime == 'off'">
+      <div *ngIf="timeslot.start_time">
+      <div *ngIf="facility.max">
+        <div *ngIf="!timeslot.bookt">
+        <button class="button" style="background-color:rgba(0,0,0,0); width: 100%;"  (click)="getBookings(facility.id, date, timeslot.start_time, timeslot.end_time)">
+      <div class="unbooked">
+        <h4 class="availble"> Booka </h4>
+        <h6>{{date}} {{timeslot.start_time}} -
+        {{timeslot.end_time}}</h6>
+      </div>
+      </button>
+    </div>
+      </div>
+    </div>
+    </div>
+
+
+    <div *ngIf="timeslot.start_time">
+    <div *ngIf="facility.min">
+      <div *ngIf="!timeslot.bookt" >
+    <div class="bookedmax">
+     <h4 class="unavailblemax"> Max 3 bokningar </h4>
+      {{date}} {{timeslot.start_time}} -
+      {{timeslot.end_time}}
+    </div>
+  </div>
+  </div>
+</div>
+
+        <div *ngIf="timeslot.bookt">
+          <div class="booked">
+            <h4 class="unavailble"> Bokad av {{timeslot.name}} </h4>
+            {{date}} {{timeslot.start_time}} - {{timeslot.end_time}}
+
+          <div *ngIf="timeslot.my">
+            <button class="button icon ion-close-circled"  (click)="deleteBookings(facility.id, timeslot.ids, date)">
+              DELETE
+            </button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</ion-content>
