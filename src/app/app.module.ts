@@ -23,7 +23,7 @@ import { BookingsService } from '../providers/bookings-service/bookings-service'
 import { TimeslotsService } from '../providers/timeslots-service/timeslots-service';
 import { LocalNotifications } from 'ionic-native';
 import { AlertController } from 'ionic-angular';
-
+import { DatePicker } from '@ionic-native/date-picker';
 
 
 
@@ -66,7 +66,8 @@ import { AlertController } from 'ionic-angular';
     BookingsService,
     TimeslotsService,
     LocalNotifications,
-    AlertController 
+    AlertController,
+    DatePicker 
     ]
 })
 export class AppModule {}

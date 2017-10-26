@@ -24,15 +24,15 @@ export class HomePage {
       // apiBase: 'http://localhost:3000/api/v1'
       apiBase: 'https://building-blockz.herokuapp.com/api/v1'
     });
-    console.log(this._tokenService);
-    LocalNotifications.on("click", (notification, state) => {
-         let alert = Alert.create({
-             title: "Notification Clicked",
-             subTitle: "You just clicked the scheduled notification",
-             buttons: ["OK"]
-         });
-         this.navController.present(alert);
-     });
+    // LocalNotifications.on("click", (notification, state) => {
+    // let alert = this.alertCtrl.create({
+    // title: "Notification Clicked",
+    // message: "You just clicked the scheduled notification",
+    // buttons: ["OK"]
+    // });
+    // alert.present()
+    // });
+    // console.log(new Date(new Date().getTime() + 5 * 1000));
   }
 
   contact() {
@@ -66,19 +66,12 @@ export class HomePage {
     })
   }
 
-
-
-
-
-
-
-
   public schedule() {
-      LocalNotifications.schedule({
-          title: "Test Title",
-          text: "Delayed Notification",
-          at: new Date(new Date().getTime() + 5 * 1000),
-          sound: null
-      });
+  LocalNotifications.schedule({
+  title: "Test Title",
+  text: "Delayed Notification",
+  at: new Date(new Date().getTime() + 5 * 1000),
+  sound: null
+  });
   }
 }

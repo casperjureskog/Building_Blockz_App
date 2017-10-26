@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FacilitiesService } from '../../providers/facilities-service/facilities-service';
 import { BookPage } from '../book/book';
+import { DatePicker } from '@ionic-native/date-picker';
 // import { DatePicker } from 'ionic-datepicker';
 /**
  * Generated class for the FacilitiesPage page.
@@ -23,7 +24,7 @@ export class FacilitiesPage {
   picker: any;
 
 
-  constructor(public navCtrl: NavController, private facilitiesService:FacilitiesService) {
+  constructor(public navCtrl: NavController, private facilitiesService:FacilitiesService, private datePicker: DatePicker) {
     this.getFacilities();
 }
 
@@ -38,14 +39,21 @@ getFacilities(){
 
 }
 
-
-
-
-getData(date, id) {
-  console.log(date, id);
-  this.navCtrl.push(BookPage, {
-  date: date, id: id
-  })
+pickers(id){
+this.datePicker.show({
+  date: new Date(),
+  mode: 'date',
+}).then(
+  date => this.navCtrl.push(BookPage, {
+    date: date, id: id}),
+  err => console.log('Error occurred while getting date: ', err)
+);
 }
+// getData(date, id) {
+//   console.log(date, id);
+//   this.navCtrl.push(BookPage, {
+//   date: date, id: id
+//   })
+// }
 
 }

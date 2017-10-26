@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FacilitiesService } from '../../providers/facilities-service/facilities-service';
 import { BookingsService } from '../../providers/bookings-service/bookings-service';
 import { TimeslotsService } from '../../providers/timeslots-service/timeslots-service';
+import { LocalNotifications } from 'ionic-native';
+import { AlertController } from 'ionic-angular';
+import * as moment from 'moment';
 /**
  * Generated class for the BookPage page.
  *
@@ -26,35 +29,45 @@ export class BookPage {
   timeslots: any;
   date: any;
 
-constructor(public navCtrl: NavController, public navParams: NavParams, private facilitiesService: FacilitiesService, private bookingsService: BookingsService, private timeslotsService: TimeslotsService ) {
+constructor(public navCtrl: NavController, public navParams: NavParams, private facilitiesService: FacilitiesService, private bookingsService: BookingsService, private timeslotsService: TimeslotsService, public alertCtrl: AlertController, public  localNotifications: LocalNotifications ) {
   console.log(navParams.get('date'));
   var id = navParams.get('id');
   var date = navParams.get('date');
-  this.date = navParams.get('date');
+  var date2 = moment(date).format('YYYY-MM-DD');
+  this.date = date2;
   this.getFacility(id);
-  // this.getBookings(id);
   this.getTimeslots(id, date);
 }
 
 getFacility(id){
-  console.log(id);
   this.facilitiesService.getFacility(id)
     .then(data => {
-      console.log(data);
       this.facility = data;
     });
 }
 
 getBookings(id, date, start_time, end_time){
-  console.log(id, date, start_time, end_time);
+  var id = id
+  var date = date
+  var start_time = start_time
+  console.log(moment(date+' '+start_time).format());
+  console.log(date);
   this.bookingsService.getBookings(id, date, start_time, end_time)
+  // console.log(data);
+  LocalNotifications.schedule({
+  title: "Test Title",
+  text: "Delayed Notification",
+  at: new Date(moment(date+' '+start_time).format()),
+  sound: null
+  });
+
 this.navCtrl.push(BookPage, {
 date: date, id: id
 })
 }
 
 deleteBookings(id, ids, date){
-  console.log(id, ids, date);
+  // console.log(id, ids, date);
   this.bookingsService.deleteBookings(id, ids)
 this.navCtrl.push(BookPage, {
 date: date, id: id
@@ -62,10 +75,10 @@ date: date, id: id
 }
 
 getTimeslots(id, date){
-  console.log(id, date);
+  // console.log(id, date);
   this.timeslotsService.getTimeslots(id, date)
     .then(data => {
-      console.log(data);
+      // console.log(data);
       this.timeslots = data;
     });
 }

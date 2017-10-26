@@ -27,7 +27,7 @@ export class BookadPage {
 getTimelists(){
   this.timelistsServiceProvider.getTimelists()
     .then(data => {
-      console.log(data);
+      // console.log(data);
       this.timelists = data;
     });
 }

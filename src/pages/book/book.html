@@ -31,25 +31,22 @@
     <p class="bobe" *ngIf="message" style="color: #000;">{{message}}</p>
   </div>
   <div *ngIf="facility.dyntime == 'on'">
-  <div class="list">
-    <label class="item item-input item-select">
-      <div class="input-label">
-        Start time
-      </div>
+<ion-item>
+    <ion-label>Start time</ion-label>
        <ion-select [(ngModel)]="start_time" name="bookingInfo">
          <ion-option value="" disabled selected>Select your booking time</ion-option>
          <ion-option value="{{timeslot.value}}" *ngFor="let timeslot of timeslots" ng-if="timeslot.time" type="time">{{timeslot.time}}</ion-option>
        </ion-select>
-    </label>
-    <label class="item item-input item-select">
-       <div class="input-label">
-         End time
-       </div>
+       </ion-item>
+    <br />
+    <br />
+    <ion-item>
+       <ion-label>End time</ion-label>
       <ion-select [(ngModel)]="end_time" name="bookingInfo">
          <ion-option value="" disabled selected>Select your booking end time</ion-option>
          <ion-option value="{{timeslot.value}}" *ngFor="let timeslot of timeslots" ng-if="timeslot.time" type="time">{{timeslot.time}}</ion-option>
       </ion-select>
-    </label>
+      </ion-item>
     <label class="item">
       <div *ngIf="facility.min">
         <h4 class="unavailblemax" style="color: red;"> Max 3 bookings </h4>
@@ -61,19 +58,22 @@
       </div>
     </div>
     </div>
-   {{facility.id}}
+
     <div *ngIf="facility.max">
       <div *ngIf="end_time" >
-        <button *ngIf="start_time" class="button" style="background-color:rgba(0,0,0,0); width: 113%;" (click)="getBookings(facility.id, date, start_time, end_time)">
+
+        <button *ngIf="start_time" class="button" style="background-color:rgba(0,0,0,0); width: 100%;" (click)="getBookings(facility.id, date, start_time, end_time)">
         <div class="unbooked">
-          <div style="margin-top:10px"><p *ngIf="error" style="color: red;">{{error}}</p> Booka rum {{facility.name}}</div>
+          <p *ngIf="error" style="color: red;">{{error}}</p> <h4 class="availble">Booka rum {{facility.name}}</h4>
+          <h6> {{date}} {{start_time}} - {{end_time}} </h6>
         </div>
        </button>
+
     </div>
       </div>
     </label>
   </div>
-  </div>
+
 
   <div class="coli" *ngIf="timeslots">
     <br />

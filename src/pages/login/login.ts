@@ -142,7 +142,7 @@ export class LoginPage {
         this.presentToast('Wrong password')
 
       });
-      
+
   }
 
   registerAccount(credentials) {
@@ -160,7 +160,7 @@ export class LoginPage {
       .signOut()
       .subscribe(res => console.log(res), err => console.error('error'));
     this.currentUser = undefined;
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(LoginPage);
     this.presentToast('User signed out.')
   }
 
