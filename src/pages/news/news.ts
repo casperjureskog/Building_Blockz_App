@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HttpProvider} from '../../providers/http-provider/http-provider';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the NewsPage page.
  *
@@ -29,6 +30,12 @@ getNews(){
     });
 
 
+}
+
+go_to_home(){
+  this.navCtrl.push(HomePage, {
+  val: 'test'
+  })
 }
 
 }

@@ -177,52 +177,5 @@ export class LoginPage {
 
     toast.present();
   }
-  // loading: any;
-  // loginData = { email:'', password:'' };
-  //
-  // data: any;
-  //
-  // constructor(public navCtrl: NavController, public authService: AuthService, public loadingCtrl: LoadingController, private toastCtrl: ToastController) {}
-  //
-  // doLogin() {
-  //   console.log(this.loginData);
-  //   // this.showLoader();
-  //   this.authService.login(this.loginData).then((result) => {
-  //
-  //     // this.loading.dismiss();
-  //     this.data = result;
-  //     console.log(this.data);
-  //     localStorage.setItem('token', this.data.access_token);
-  //     console.log(localStorage.getItem("token"));
-  //     this.navCtrl.setRoot(HomePage);
-  //   }, (err) => {
-  //     this.loading.dismiss();
-  //     this.presentToast(err);
-  //   });
-  // }
-  //
-  //
-  // showLoader(){
-  //   this.loading = this.loadingCtrl.create({
-  //       content: 'Authenticating...'
-  //   });
-  //
-  //   this.loading.present();
-  // }
-  //
-  // presentToast(msg) {
-  //   let toast = this.toastCtrl.create({
-  //     message: msg,
-  //     duration: 3000,
-  //     position: 'bottom',
-  //     dismissOnPageChange: true
-  //   });
-  //
-  //   toast.onDidDismiss(() => {
-  //     console.log('Dismissed toast');
-  //   });
-  //
-  //   toast.present();
-  // }
 
 }

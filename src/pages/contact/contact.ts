@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ContactPage page.
@@ -22,6 +23,12 @@ export class ContactPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactPage');
+  }
+
+  go_to_home(){
+    this.navCtrl.push(HomePage, {
+    val: 'test'
+    })
   }
 
 }

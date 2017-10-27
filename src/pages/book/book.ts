@@ -6,6 +6,8 @@ import { TimeslotsService } from '../../providers/timeslots-service/timeslots-se
 import { LocalNotifications } from 'ionic-native';
 import { AlertController } from 'ionic-angular';
 import * as moment from 'moment';
+import { HomePage } from '../home/home';
+import { FacilitiesPage } from '../facilities/facilities';
 /**
  * Generated class for the BookPage page.
  *
@@ -36,6 +38,7 @@ constructor(public navCtrl: NavController, public navParams: NavParams, private 
   this.date = date2;
   this.getFacility(id);
   this.getTimeslots(id, date);
+
 }
 
 getFacility(id){
@@ -75,5 +78,11 @@ getTimeslots(id, date){
     .then(data => {
       this.timeslots = data;
     });
+}
+
+go_to_face(){
+  this.navCtrl.push(FacilitiesPage, {
+  val: 'test'
+  })
 }
 }

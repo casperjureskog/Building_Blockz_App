@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TimelistsServiceProvider } from '../../providers/timelists-service/timelists-service';
 import { BookingsService } from '../../providers/bookings-service/bookings-service';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the BookadPage page.
  *
@@ -38,5 +39,11 @@ deleteBookings(id, ids){
 this.navCtrl.push(BookadPage, {
 id: id
 })
+}
+
+go_to_home(){
+  this.navCtrl.push(HomePage, {
+  val: 'test'
+  })
 }
 }

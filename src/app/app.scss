@@ -289,10 +289,9 @@ h3 {
 }
 
 .back {
-  width: 100%;
-  position: relative;
-  top: 5px;
-  left: -90px;
+  top: 20%;
+  position: fixed;
+  left: 1%;
 }
 
 .signout {
@@ -322,7 +321,7 @@ h3 {
 .title-image3 {
   height: 25px;
   position: relative;
-  left: 15px;
+  left: 0%;
 }
 
 .coli {
@@ -332,6 +331,12 @@ h3 {
 
 .close {
   height: 24px;
+}
+
+.close-pose {
+  top: 20%;
+  position: fixed;
+  left: 86%;
 }
 
 .doughnut {

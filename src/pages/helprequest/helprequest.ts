@@ -53,4 +53,10 @@ presentToast(message_text) {
 
   toast.present();
 }
+
+go_to_home(){
+  this.navCtrl.push(HomePage, {
+  val: 'test'
+  })
+}
 }

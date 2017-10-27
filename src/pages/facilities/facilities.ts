@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FacilitiesService } from '../../providers/facilities-service/facilities-service';
 import { BookPage } from '../book/book';
 import { DatePicker } from '@ionic-native/date-picker';
+import { HomePage } from '../home/home';
 // import { DatePicker } from 'ionic-datepicker';
 /**
  * Generated class for the FacilitiesPage page.
@@ -55,5 +56,9 @@ this.datePicker.show({
 //   date: date, id: id
 //   })
 // }
-
+go_to_home(){
+  this.navCtrl.push(HomePage, {
+  val: 'test'
+  })
+}
 }
