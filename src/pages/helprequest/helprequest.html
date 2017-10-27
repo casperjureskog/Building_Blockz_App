@@ -14,5 +14,19 @@
 
 
 <ion-content padding>
+  <ion-list>
 
+  <ion-item>
+    <ion-label floating>Title</ion-label>
+    <ion-input type="text" [(ngModel)]="title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-input type="text" [(ngModel)]="message"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+<button full ion-button color="secondary" (click)="getHelprequests(title, message)">Save</button>
 </ion-content>

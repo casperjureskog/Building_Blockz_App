@@ -30,7 +30,6 @@ export class BookPage {
   date: any;
 
 constructor(public navCtrl: NavController, public navParams: NavParams, private facilitiesService: FacilitiesService, private bookingsService: BookingsService, private timeslotsService: TimeslotsService, public alertCtrl: AlertController, public  localNotifications: LocalNotifications ) {
-  console.log(navParams.get('date'));
   var id = navParams.get('id');
   var date = navParams.get('date');
   var date2 = moment(date).format('YYYY-MM-DD');
@@ -50,8 +49,6 @@ getBookings(id, date, start_time, end_time){
   var id = id
   var date = date
   var start_time = start_time
-  console.log(moment(date+' '+start_time).format());
-  console.log(date);
   this.bookingsService.getBookings(id, date, start_time, end_time)
   // console.log(data);
   LocalNotifications.schedule({
@@ -67,7 +64,6 @@ date: date, id: id
 }
 
 deleteBookings(id, ids, date){
-  // console.log(id, ids, date);
   this.bookingsService.deleteBookings(id, ids)
 this.navCtrl.push(BookPage, {
 date: date, id: id
@@ -75,10 +71,8 @@ date: date, id: id
 }
 
 getTimeslots(id, date){
-  // console.log(id, date);
   this.timeslotsService.getTimeslots(id, date)
     .then(data => {
-      // console.log(data);
       this.timeslots = data;
     });
 }

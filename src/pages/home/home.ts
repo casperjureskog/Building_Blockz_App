@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import { ContactPage } from '../contact/contact';
 import { BookPage } from '../book/book';
 import { FacilitiesPage } from '../facilities/facilities';
@@ -9,30 +9,29 @@ import { HelprequestPage } from '../helprequest/helprequest';
 import { Angular2TokenService } from 'angular2-token';
 import { LocalNotifications } from 'ionic-native';
 import { AlertController } from 'ionic-angular';
+import { BuildingsService } from '../../providers/buildings-service/buildings-service';
 
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-
+  providers:[BuildingsService]
 })
 export class HomePage {
+  buildings: any;
+  name: any;
+  count: any;
 
-
-  constructor(public navCtrl: NavController, private _tokenService: Angular2TokenService, public alertCtrl: AlertController, public  localNotifications: LocalNotifications) {
+  constructor(public navCtrl: NavController,
+              private _tokenService: Angular2TokenService,
+              private buildingsService: BuildingsService )
+              {
+    this.getBuildings();
     this._tokenService.init({
       // apiBase: 'http://localhost:3000/api/v1'
       apiBase: 'https://building-blockz.herokuapp.com/api/v1'
     });
-    // LocalNotifications.on("click", (notification, state) => {
-    // let alert = this.alertCtrl.create({
-    // title: "Notification Clicked",
-    // message: "You just clicked the scheduled notification",
-    // buttons: ["OK"]
-    // });
-    // alert.present()
-    // });
-    // console.log(new Date(new Date().getTime() + 5 * 1000));
+
   }
 
   contact() {
@@ -66,12 +65,15 @@ export class HomePage {
     })
   }
 
-  public schedule() {
-  LocalNotifications.schedule({
-  title: "Test Title",
-  text: "Delayed Notification",
-  at: new Date(new Date().getTime() + 5 * 1000),
-  sound: null
-  });
+  getBuildings(){
+    this.buildingsService.getBuildings()
+      .then(data => {
+      //   if(data){
+      //
+      //   this.name = data.name
+      //   this.count = data.count;
+      // }
+      });
   }
+
 }

@@ -11,10 +11,10 @@
 </ion-header>
 
 <ion-content>
- <button ion-button color="dark" primary (click)="schedule()">Schedule</button>
+
   <div class="space">
     <br>
-    <!-- <h3 class="title">{{buildings.name}}</h3><br> -->
+    <h2 class="title">{{name}}</h2><br>
   </div>
     <ion-col col-4  style="padding: 0px;">
       <button style="background-color:rgba(0,0,0,0)" (click)="news()">
@@ -27,7 +27,6 @@
   <ion-col col-4  style="padding: 0px;">
     <button style="background-color:rgba(0,0,0,0);" (click)="facilities()">
       <div class="cards" style="width: 105px;">
-        <!-- <div class="tag" ng-if="buildings.count"><h6 class="bookcount">{{buildings.count}}</h6></div> -->
         <img class="faci2" src="img/bokning.png">
         <h6 class="obook"> Boka </h6>
       </div>
@@ -36,6 +35,7 @@
   <ion-col col-4  style="padding: 0px;">
     <button style="background-color:rgba(0,0,0,0)" (click)="bookad()">
       <div class="cards" style="width: 105px;">
+        <div class="tag2" *ngIf="count"><h6 class="bookcount">{{count}}</h6></div>
         <img class="faci2" src="img/elforbrukning.png">
         <h6 class="obook"> Bokningar </h6>
       </div>
@@ -50,7 +50,7 @@
     </button>
   </ion-col>
   <ion-col col-4 style="padding: 0px;">
-    <button style="background-color:rgba(0,0,0,0)" (click)="Helprequest()">
+    <button style="background-color:rgba(0,0,0,0)" (click)="helprequest()">
       <div class="cards" style="width: 105px;">
         <img class="faci2" src="img/felanmalan.png">
         <h6 class="obook"> Felanmälan </h6>

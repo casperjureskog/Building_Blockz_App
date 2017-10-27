@@ -24,6 +24,8 @@ import { TimeslotsService } from '../providers/timeslots-service/timeslots-servi
 import { LocalNotifications } from 'ionic-native';
 import { AlertController } from 'ionic-angular';
 import { DatePicker } from '@ionic-native/date-picker';
+import { BuildingsService } from '../providers/buildings-service/buildings-service';
+import { HrService } from '../providers/hr-service/hr-service';
 
 
 
@@ -67,7 +69,9 @@ import { DatePicker } from '@ionic-native/date-picker';
     TimeslotsService,
     LocalNotifications,
     AlertController,
-    DatePicker 
+    DatePicker,
+    BuildingsService,
+    HrService
     ]
 })
 export class AppModule {}
