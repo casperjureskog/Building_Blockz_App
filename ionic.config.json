@@ -1,5 +1,8 @@
 {
   "name": "BuildingBlockz",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "b08fa6d1",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

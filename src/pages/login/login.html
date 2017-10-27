@@ -1,0 +1,41 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title style="background-color: #23c1a0;">
+      <img class="title-image3" src="img/logoFinal.png" />
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <br />
+  <br />
+  <br />
+  <br />
+
+      <br />
+      <br />
+      <br />
+      <br />
+  <ion-list>
+    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p.component)">
+        {{p.title}}
+    </button>
+    <button menuClose ion-item (click)="openResultPage()" *ngIf="currentUser">
+      All Results
+    </button>
+    <button menuClose ion-item (click)="loginPopUp()" *ngIf="!currentUser">
+      Login
+    </button>
+    <button menuClose ion-item (click)="test()" *ngIf="!currentUser">
+      Sign up
+    </button>
+    <button menuClose ion-item (click)="logout()" *ngIf="currentUser">
+      Logout {{currentUser.email}}
+    </button>
+  </ion-list>
+</ion-content>
