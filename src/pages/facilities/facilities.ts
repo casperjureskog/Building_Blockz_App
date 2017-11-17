@@ -4,6 +4,7 @@ import { FacilitiesService } from '../../providers/facilities-service/facilities
 import { BookPage } from '../book/book';
 import { DatePicker } from '@ionic-native/date-picker';
 import { HomePage } from '../home/home';
+import * as moment from 'moment';
 // import { DatePicker } from 'ionic-datepicker';
 /**
  * Generated class for the FacilitiesPage page.
@@ -44,6 +45,8 @@ pickers(id){
 this.datePicker.show({
   date: new Date(),
   mode: 'date',
+  minDate: moment().locale('de').add(0, 'days').toDate(),
+  maxDate: moment().locale('de').add(7, 'days').toDate(),
 }).then(
   date => this.navCtrl.push(BookPage, {
     date: date, id: id}),
