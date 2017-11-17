@@ -16,7 +16,7 @@ export class BuildingsService {
     console.log('Hello TimelistsServiceProvider Provider');
       }
 
-    getBuildings() {
+    getBuilding() {
     return new Promise(resolve => {
       this._tokenService.get('/buildings').map(res => res.json()).subscribe(data => {
         resolve(data);

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , ToastController } from 'ionic-angular';
 import { FacilitiesService } from '../../providers/facilities-service/facilities-service';
 import { BookingsService } from '../../providers/bookings-service/bookings-service';
 import { TimeslotsService } from '../../providers/timeslots-service/timeslots-service';
@@ -30,11 +30,15 @@ export class BookPage {
   id: any;
   timeslots: any;
   date: any;
+  datenow: any;
+  timenow: any;
 
-constructor(public navCtrl: NavController, public navParams: NavParams, private facilitiesService: FacilitiesService, private bookingsService: BookingsService, private timeslotsService: TimeslotsService, public alertCtrl: AlertController, public  localNotifications: LocalNotifications ) {
+constructor(public navCtrl: NavController, public navParams: NavParams, private facilitiesService: FacilitiesService, private bookingsService: BookingsService, private timeslotsService: TimeslotsService, public alertCtrl: AlertController, public  localNotifications: LocalNotifications, private toastCtrl: ToastController ) {
   var id = navParams.get('id');
   var date = navParams.get('date');
   var date2 = moment(date).format('YYYY-MM-DD');
+  this.datenow = moment().format('YYYY-MM-DD');
+  this.timenow = moment().format('hh:mm:ss');
   this.date = date2;
   this.getFacility(id);
   this.getTimeslots(id, date);
@@ -55,15 +59,34 @@ getBookings(id, date, start_time, end_time){
   this.bookingsService.getBookings(id, date, start_time, end_time)
   // console.log(data);
   LocalNotifications.schedule({
-  title: "Test Title",
-  text: "Delayed Notification",
-  at: new Date(moment(date+' '+start_time).format()),
+  title: "Din bokning är Klockan "+start_time,
+  text: 'Rum '+this.facility.name+' kl '+start_time,
+  at: new Date(moment(date+' '+start_time).subtract(3, 'hours').format()),
   sound: null
   });
 
 this.navCtrl.push(BookPage, {
 date: date, id: id
 })
+let toast = this.toastCtrl.create({
+message: `Tack för din bokning`,
+duration: 2000
+});
+toast.present();
+}
+
+presentToast(message_text) {
+let toast = this.toastCtrl.create({
+message: message_text,
+duration: 3000,
+position: 'bottom'
+});
+
+toast.onDidDismiss(() => {
+console.log('Medelande skickat');
+});
+
+toast.present();
 }
 
 deleteBookings(id, ids, date){

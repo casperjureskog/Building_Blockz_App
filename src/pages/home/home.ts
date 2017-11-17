@@ -10,6 +10,7 @@ import { Angular2TokenService } from 'angular2-token';
 import { LocalNotifications } from 'ionic-native';
 import { AlertController } from 'ionic-angular';
 import { BuildingsService } from '../../providers/buildings-service/buildings-service';
+import * as moment from 'moment';
 
 
 @Component({
@@ -18,20 +19,20 @@ import { BuildingsService } from '../../providers/buildings-service/buildings-se
   providers:[BuildingsService]
 })
 export class HomePage {
-  buildings: any;
+  building: any;
   name: any;
-  count: any;
+  // count: any;
 
   constructor(public navCtrl: NavController,
               private _tokenService: Angular2TokenService,
               private buildingsService: BuildingsService )
               {
-    this.getBuildings();
+                console.log(moment().format('YYYY MM DD hh:mm:ss'));
+    this.getBuilding();
     this._tokenService.init({
       // apiBase: 'http://localhost:3000/api/v1'
       apiBase: 'https://building-blockz.herokuapp.com/api/v1'
     });
-
   }
 
   contact() {
@@ -65,14 +66,12 @@ export class HomePage {
     })
   }
 
-  getBuildings(){
-    this.buildingsService.getBuildings()
+  getBuilding(){
+    this.buildingsService.getBuilding()
       .then(data => {
-      //   if(data){
-      //
-      //   this.name = data.name
-      //   this.count = data.count;
-      // }
+        console.log(data);
+        // this.name = data.name;
+        // this.count = data.count;
       });
   }
 
