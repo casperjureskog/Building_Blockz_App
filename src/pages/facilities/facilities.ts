@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import { FacilitiesService } from '../../providers/facilities-service/facilities-service';
 import { BookPage } from '../book/book';
 import { DatePicker } from '@ionic-native/date-picker';

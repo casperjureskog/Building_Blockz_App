@@ -7,10 +7,10 @@
 <ion-header>
   <ion-navbar hideBackButton>
     <ion-title style="background-color: #23c1a0;">
-      <img class="title-image3" src="/assets/img/logoFinal.png" />
+      <img class="title-image3" src="assets/img/logoFinal.png" />
       <div class="back">
       <button class="button" style="background-color:rgba(0,0,0,0)"  (click)="go_to_home()">
-        <img class="pil" src="/assets/img/triangular-arrow-ar.png" />
+        <img class="pil" src="assets/img/triangular-arrow-ar.png" />
     </button>
     </div>
     </ion-title>
@@ -21,12 +21,14 @@
 <ion-content padding>
   <ion-item *ngFor="let timelist of timelists" >
 
-     Rum {{timelist.name}}
-     <br>
+    Rum {{timelist.name}}
+    <br>
+    <br>
     {{timelist.start_time}} - {{timelist.end_time}}
     <br>
-      <button class="button" (click)="deleteBookings(timelist.id, timelist.idb)">Delete
-      </button>
+    <br>
+    <button ion-button small color="danger" (click)="deleteBookings(timelist.id, timelist.idb)">Delete
+    </button>
 
   </ion-item>
 </ion-content>

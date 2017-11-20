@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController} from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 import { ContactPage } from '../contact/contact';
 import { BookPage } from '../book/book';
 import { FacilitiesPage } from '../facilities/facilities';
@@ -7,8 +7,6 @@ import { NewsPage } from '../news/news';
 import { BookadPage } from '../bookad/bookad';
 import { HelprequestPage } from '../helprequest/helprequest';
 import { Angular2TokenService } from 'angular2-token';
-import { LocalNotifications } from 'ionic-native';
-import { AlertController } from 'ionic-angular';
 import { BuildingsService } from '../../providers/buildings-service/buildings-service';
 import * as moment from 'moment';
 
@@ -20,15 +18,18 @@ import * as moment from 'moment';
 })
 export class HomePage {
   building: any;
-  name: any;
-  // count: any;
+  name1: any;
+
+
 
   constructor(public navCtrl: NavController,
               private _tokenService: Angular2TokenService,
-              private buildingsService: BuildingsService )
+              public buildingsService: BuildingsService)
               {
-                console.log(moment().format('YYYY MM DD hh:mm:ss'));
+                console.log(moment().format('YYYY MM DD HH:MM:SS'));
     this.getBuilding();
+
+
     this._tokenService.init({
       // apiBase: 'http://localhost:3000/api/v1'
       apiBase: 'https://building-blockz.herokuapp.com/api/v1'
@@ -69,9 +70,8 @@ export class HomePage {
   getBuilding(){
     this.buildingsService.getBuilding()
       .then(data => {
-        console.log(data);
-        // this.name = data.name;
-        // this.count = data.count;
+        this.name1 = data;
+
       });
   }
 
