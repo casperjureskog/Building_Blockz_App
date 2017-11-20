@@ -16,10 +16,10 @@
 
   <div class="space">
     <br>
-    <h2 class="title">{{name}}</h2><br>
+    <h2 class="title" style="font-weight: bold; font-size: 250%;">{{name1}}</h2><br>
   </div>
     <ion-col col-3  style="padding: 0px;">
-      <button style="background-color:rgba(0,0,0,0)" (click)="news()">
+      <button style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="news()">
         <div class="cards" style="width: 95px;">
           <img class="faci2" src="./assets/img/nyheter.png">
           <h6 class="obook"> Nyheter </h6>
@@ -27,7 +27,7 @@
       </button>
     </ion-col>
   <ion-col col-3  style="padding: 0px;">
-    <button style="background-color:rgba(0,0,0,0);" (click)="facilities()">
+    <button style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="facilities()">
       <div class="cards" style="width: 95px;">
         <img class="faci2" src="./assets/img/bokning.png">
         <h6 class="obook"> Boka </h6>
@@ -35,7 +35,7 @@
     </button>
   </ion-col>
   <ion-col col-3  style="padding: 0px;">
-    <button style="background-color:rgba(0,0,0,0)" (click)="bookad()">
+    <button style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="bookad()">
       <div class="cards" style="width: 95px;">
         <div class="tag2" *ngIf="count"><h6 class="bookcount">{{count}}</h6></div>
         <img class="faci2" src="./assets/img/elforbrukning.png">
@@ -44,7 +44,7 @@
     </button>
   </ion-col>
   <ion-col col-3  style="padding: 0px;">
-    <button style="background-color:rgba(0,0,0,0)" (click)="contact()">
+    <button style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="contact()">
       <div class="cards" style="width: 95px;">
         <img class="faci2" src="./assets/img/information.png">
         <h6 class="obook"> Information </h6>
@@ -52,7 +52,7 @@
     </button>
   </ion-col>
   <ion-col col-3 style="padding: 0px;">
-    <button style="background-color:rgba(0,0,0,0)" (click)="helprequest()">
+    <button style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="helprequest()">
       <div class="cards" style="width: 95px;">
         <img class="faci2" src="./assets/img/felanmalan.png">
         <h6 class="obook"> Felanmälan </h6>

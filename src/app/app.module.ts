@@ -14,7 +14,6 @@ import { FacilitiesPage } from '../pages/facilities/facilities';
 import { NewsPage } from '../pages/news/news';
 import { BookadPage } from '../pages/bookad/bookad';
 import { HelprequestPage } from '../pages/helprequest/helprequest';
-import { TimelistsServiceProvider } from '../providers/timelists-service/timelists-service';
 import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

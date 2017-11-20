@@ -21,12 +21,14 @@
 <ion-content padding>
   <ion-item *ngFor="let timelist of timelists" >
 
-     Rum {{timelist.name}}
-     <br>
+    Rum {{timelist.name}}
+    <br>
+    <br>
     {{timelist.start_time}} - {{timelist.end_time}}
     <br>
-      <button class="button" (click)="deleteBookings(timelist.id, timelist.idb)">Delete
-      </button>
+    <br>
+    <button ion-button small color="danger" (click)="deleteBookings(timelist.id, timelist.idb)">Delete
+    </button>
 
   </ion-item>
 </ion-content>

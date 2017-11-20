@@ -21,7 +21,7 @@
   <h3 class="title">GEMENSAMMA UTRYMMEN</h3><br>
 
   <ion-col col-6 *ngFor="let facility of facilities" >
-      <button class="button" style="background-color:rgba(0,0,0,0);" (click)="pickers(facility.id)">
+      <button class="button" style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="pickers(facility.id)">
       <div class="cards" style="width: 130px; height: 130px">
         <div class="tag" *ngIf="facility.count"><h6 class="bookcount">{{facility.count}}</h6></div>
         <img class="faci" src="./assets/img/facilityicon.png">
