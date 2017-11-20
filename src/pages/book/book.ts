@@ -38,7 +38,7 @@ constructor(public navCtrl: NavController, public navParams: NavParams, private 
   var date = navParams.get('date');
   var date2 = moment(date).format('YYYY-MM-DD');
   this.datenow = moment().format('YYYY-MM-DD');
-  this.timenow = moment().format('hh:mm:ss');
+  this.timenow = moment().format('HH:MM:SS');
   this.date = date2;
   this.getFacility(id);
   this.getTimeslots(id, date);

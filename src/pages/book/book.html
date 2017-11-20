@@ -7,10 +7,10 @@
 <ion-header>
   <ion-navbar hideBackButton>
     <ion-title style="background-color: #23c1a0;">
-      <img class="title-image3" src="/assets/img/logoFinal.png" />
+      <img class="title-image3" src="assets/img/logoFinal.png" />
       <div class="back">
       <button class="button" style="background-color:rgba(0,0,0,0)"  (click)="go_to_face()">
-        <img class="pil" src="/assets/img/triangular-arrow-ar.png" />
+        <img class="pil" src="assets/img/triangular-arrow-ar.png" />
     </button>
     </div>
     </ion-title>
@@ -30,7 +30,7 @@
     <h5 class="bobe" style="color: #000;">{{date}}</h5>
     <h5 class="bobe" style="color: #000;">Beskrivning</h5> <span style="color: #000;">{{facility.description}}</span>
 
-    <br><img src="../assets/img/openlab{{facility.name}}.png" style="width: 60%; height: 60%;">
+    <br><img src="assets/img/openlab{{facility.name}}.png" style="width: 60%; height: 60%;">
     <h5 class="bobe" style="color: #000;">Regler</h5> <span style="color: #000;">{{facility.rules}}</span>
     <p *ngIf="error" style="color: red;">{{error}}</p>
     <br>

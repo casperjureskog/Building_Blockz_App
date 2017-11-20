@@ -7,10 +7,10 @@
 <ion-header>
   <ion-navbar hideBackButton>
     <ion-title style="background-color: #23c1a0;">
-      <img class="title-image3" src="/assets/img/logoFinal.png" />
+      <img class="title-image3" src="assets/img/logoFinal.png" />
       <div class="back">
       <button class="button" style="background-color:rgba(0,0,0,0)"  (click)="go_to_home()">
-        <img class="pil" src="/assets/img/triangular-arrow-ar.png" />
+        <img class="pil" src="assets/img/triangular-arrow-ar.png" />
     </button>
     </div>
     </ion-title>
@@ -21,10 +21,10 @@
   <h3 class="title">GEMENSAMMA UTRYMMEN</h3><br>
 
   <ion-col col-6 *ngFor="let facility of facilities" >
-      <button class="button" style="background-color:rgba(0,0,0,0);" (click)="pickers(facility.id)">
+      <button class="button" style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="pickers(facility.id)">
       <div class="cards" style="width: 130px; height: 130px">
         <div class="tag" *ngIf="facility.count"><h6 class="bookcount">{{facility.count}}</h6></div>
-        <img class="faci" src="/assets/img/facilityicon.png">
+        <img class="faci" src="assets/img/facilityicon.png">
         <h6 class="obook"> {{facility.name}}</h6>
         </div>
   </button>
