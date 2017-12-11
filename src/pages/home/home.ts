@@ -8,7 +8,6 @@ import { BookadPage } from '../bookad/bookad';
 import { HelprequestPage } from '../helprequest/helprequest';
 import { Angular2TokenService } from 'angular2-token';
 import { BuildingsService } from '../../providers/buildings-service/buildings-service';
-import * as moment from 'moment';
 
 
 @Component({
@@ -18,15 +17,15 @@ import * as moment from 'moment';
 })
 export class HomePage {
   building: any;
-  name1: any;
-
+  name: any;
+  count: any;
 
 
   constructor(public navCtrl: NavController,
               private _tokenService: Angular2TokenService,
               public buildingsService: BuildingsService)
               {
-                console.log(moment().format('YYYY MM DD HH:MM:SS'));
+
     this.getBuilding();
 
 
@@ -70,9 +69,11 @@ export class HomePage {
   getBuilding(){
     this.buildingsService.getBuilding()
       .then(data => {
-        this.name1 = data;
-
+        console.log(data)
+        this.name = data.name;
+        this.count = data.count;
       });
+
   }
 
 }
