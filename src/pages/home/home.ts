@@ -8,6 +8,9 @@ import { BookadPage } from '../bookad/bookad';
 import { HelprequestPage } from '../helprequest/helprequest';
 import { Angular2TokenService } from 'angular2-token';
 import { BuildingsService } from '../../providers/buildings-service/buildings-service';
+import * as moment from 'moment';
+import * as _ from "lodash";
+
 
 
 @Component({
@@ -17,6 +20,8 @@ import { BuildingsService } from '../../providers/buildings-service/buildings-se
 })
 export class HomePage {
   building: any;
+  house: string;
+  counter: number;
   name: any;
   count: any;
 
@@ -26,13 +31,11 @@ export class HomePage {
               public buildingsService: BuildingsService)
               {
 
-    this.getBuilding();
-
-
-    this._tokenService.init({
-      // apiBase: 'http://localhost:3000/api/v1'
-      apiBase: 'https://building-blockz.herokuapp.com/api/v1'
+      this.getBuilding(); this._tokenService.init({
+      apiBase: 'http://localhost:3000/api/v1'
+      // apiBase: 'https://building-blockz.herokuapp.com/api/v1'
     });
+    this.getBuilding();
   }
 
   contact() {
@@ -67,12 +70,11 @@ export class HomePage {
   }
 
   getBuilding(){
-    this.buildingsService.getBuilding()
-      .then(data => {
-        console.log(data)
-        this.name = data.name;
-        this.count = data.count;
-      });
+    this.buildingsService.getBuilding().then(data => {
+      var datas: any = data;
+      this.house = datas.name;
+      this.counter = datas.count;
+    });
 
   }
 
