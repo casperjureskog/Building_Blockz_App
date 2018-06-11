@@ -12,6 +12,7 @@ import * as moment from 'moment';
 import * as _ from "lodash";
 
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -21,19 +22,16 @@ export class HomePage {
   building: any;
   house: string;
   counter: number;
-
-
+  name: any;
+  count: any;
 
 
   constructor(public navCtrl: NavController,
               private _tokenService: Angular2TokenService,
               public buildingsService: BuildingsService)
               {
-                console.log(moment().format('YYYY MM DD HH:MM:SS'));
 
-
-
-    this._tokenService.init({
+      this.getBuilding(); this._tokenService.init({
       apiBase: 'http://localhost:3000/api/v1'
       // apiBase: 'https://building-blockz.herokuapp.com/api/v1'
     });
@@ -77,6 +75,7 @@ export class HomePage {
       this.house = datas.name;
       this.counter = datas.count;
     });
+
   }
 
 }
