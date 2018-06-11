@@ -5,13 +5,6 @@ import { BookPage } from '../book/book';
 import { DatePicker } from '@ionic-native/date-picker';
 import { HomePage } from '../home/home';
 import * as moment from 'moment';
-// import { DatePicker } from 'ionic-datepicker';
-/**
- * Generated class for the FacilitiesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -34,11 +27,8 @@ export class FacilitiesPage {
 getFacilities(){
   this.facilitiesService.getFacilities()
     .then(data => {
-      console.log(data);
       this.facilities = data;
     });
-
-
 }
 
 pickers(id){

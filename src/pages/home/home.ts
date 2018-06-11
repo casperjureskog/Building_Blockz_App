@@ -9,6 +9,7 @@ import { HelprequestPage } from '../helprequest/helprequest';
 import { Angular2TokenService } from 'angular2-token';
 import { BuildingsService } from '../../providers/buildings-service/buildings-service';
 import * as moment from 'moment';
+import * as _ from "lodash";
 
 
 @Component({
@@ -18,7 +19,9 @@ import * as moment from 'moment';
 })
 export class HomePage {
   building: any;
-  name1: any;
+  house: string;
+  counter: number;
+
 
 
 
@@ -27,13 +30,14 @@ export class HomePage {
               public buildingsService: BuildingsService)
               {
                 console.log(moment().format('YYYY MM DD HH:MM:SS'));
-    this.getBuilding();
+
 
 
     this._tokenService.init({
-      // apiBase: 'http://localhost:3000/api/v1'
-      apiBase: 'https://building-blockz.herokuapp.com/api/v1'
+      apiBase: 'http://localhost:3000/api/v1'
+      // apiBase: 'https://building-blockz.herokuapp.com/api/v1'
     });
+    this.getBuilding();
   }
 
   contact() {
@@ -68,11 +72,11 @@ export class HomePage {
   }
 
   getBuilding(){
-    this.buildingsService.getBuilding()
-      .then(data => {
-        this.name1 = data;
-
-      });
+    this.buildingsService.getBuilding().then(data => {
+      var datas: any = data;
+      this.house = datas.name;
+      this.counter = datas.count;
+    });
   }
 
 }

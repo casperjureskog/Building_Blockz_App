@@ -14,6 +14,8 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
 user {
   color: #FFF ;
   text-align: center;
@@ -291,7 +293,7 @@ h3 {
 }
 
 .back {
-  top: 20%;
+  top: 30%;
   position: fixed;
   left: 1%;
 }
@@ -336,7 +338,7 @@ h3 {
 }
 
 .close-pose {
-  top: 20%;
+  top: 40%;
   position: fixed;
   left: 86%;
 }
@@ -384,7 +386,7 @@ h3 {
   line-height:10px;
   text-align:center;
   background: red;
-  position: absolute;
+  position: fixed;
   margin-top: 2px;
   margin-left: 4px;
   box-shadow: 1px 1px 3px #666;
