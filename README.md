@@ -1,26 +1,75 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Building_blocks_mobile
 
-## How to use this template
+Building Blocks Mobile App is the last project for CraftAcademy Cohort (Feb-April 2017). This is the app for housing community that will allow tenants to send help message request, book a facility using their mobile phone, be updated with the latest events/news in their community.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for deployment and testing purposes.  See deployment for notes on how to deploy the project on a live system.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+In order to organize the features needed for our project and track our progress, we used different tools such as:
 
-### With the Ionic CLI:
+**Pivotal Tracker**
+[Pivotal Tracker for Building blocks](https://www.pivotaltracker.com/n/projects/2007795).
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+**GitHub**
+[GitHub Pages](https://github.com/casperjureskog/ionic2-port/tree/master).
+
+### Ionic
+The Ionic Framework command line utility makes it easy to start, build, run, and emulate Ionic apps. In addition, it comes with (optional!) integration with the Ionic Cloud, a set of mobile backend services perfect for Ionic apps.
 
 ```bash
 $ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
+$ ionic start
 ```
 
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+### Run the application
+In your terminal run the following command to start a local server and run the application
 ```
+$ ionic serve -c --lab
+```
+### Create user account
+In order to use the app, the tenant must register and login.
 
-Substitute ios for android if not on a Mac.
+#### Registration form:
 
+<br>
+<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/registration.png" />
+<br>
+
+#### Login form:
+
+<br>
+<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/signin.png" />
+<br>
+
+### Send Help Request message
+This is the tab where the tenant can write and send the help request message to the administrator of the building.
+
+<br>
+<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/message_request.png" />
+<br>
+
+### List of Facilities
+This is the tab where tenants can find the facilities available in their building/community
+
+<br>
+<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/facilities.png" />
+<br>
+
+### Book a facility
+This is where the tenants can check and book facilities
+
+<br>
+<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/booking.png" />
+<br>
+
+View of facilities availability
+
+<br>
+<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/booked.png" />
+<br>
+
+
+## Authors
+**Casper Jureskog** - https://github.com/casperjureskog <br>
+**Fabian Lundgren** - https://github.com/fabianlundgren<br>
+**Johan Schantz** - https://github.com/Scharrre97<br>
