@@ -12,19 +12,18 @@
 </ion-header>
 
 <ion-content>
-
   <div class="space">
     <br>
     <h2 class="title" style="font-weight: bold; font-size: 250%;">{{house}}</h2><br>
   </div>
-    <ion-col col-3  style="padding: 0px;">
-      <button style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="news()">
-        <div class="cards" style="width: 95px;">
-          <img class="faci2" src="./assets/img/nyheter.png">
-          <h6 class="obook"> Nyheter </h6>
-        </div>
-      </button>
-    </ion-col>
+  <ion-col col-3  style="padding: 0px;">
+    <button style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="news()">
+      <div class="cards" style="width: 95px;">
+        <img class="faci2" src="./assets/img/nyheter.png">
+        <h6 class="obook"> Nyheter </h6>
+      </div>
+    </button>
+  </ion-col>
   <ion-col col-3  style="padding: 0px;">
     <button style="background-color:rgba(0,0,0,0); margin-bottom: 28px;" (click)="facilities()">
       <div class="cards" style="width: 95px;">
@@ -58,13 +57,4 @@
       </div>
     </button>
   </ion-col>
-  <!-- <ion-col col-4>
-     <button class="button" style="background-color:rgba(0,0,0,0)"  (click)="contact()">
-      <div class="cards" style="width: 105pxpx;">
-        <img class="faci2" src="./assets/img/dokument.png">
-        <h6 class="obook"> Dokument </h6>
-      </div>
-    </button>
-  </ion-col>  -->
-
 </ion-content>
