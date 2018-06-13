@@ -28,17 +28,15 @@ export class BookadPage {
 getTimelists(){
   this.timelistsServiceProvider.getTimelists()
     .then(data => {
-      // console.log(data);
       this.timelists = data;
     });
 }
 
 deleteBookings(id, ids){
-  console.log(id, ids);
   this.bookingsService.deleteBookings(id, ids)
-this.navCtrl.push(BookadPage, {
-id: id
-})
+  this.navCtrl.push(BookadPage, {
+    id: id
+  })
 }
 
 go_to_home(){
