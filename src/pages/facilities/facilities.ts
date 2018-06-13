@@ -37,7 +37,6 @@ this.datePicker.show({
   mode: 'date',
   minDate: moment().locale('de').add(0, 'days').toDate(),
   maxDate: moment().locale('de').add(7, 'days').toDate(),
-  allowOldDates: 'false',
 }).then(
   date => this.navCtrl.push(BookPage, {
     date: date, id: id}),
