@@ -6,14 +6,6 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
   <ion-list>
     <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p.component)">
         {{p.title}}
@@ -23,9 +15,6 @@
     </button>
     <button menuClose ion-item (click)="loginPopUp()" *ngIf="!currentUser">
       Login
-    </button>
-    <button menuClose ion-item (click)="test()" *ngIf="!currentUser">
-      Sign up
     </button>
     <button menuClose ion-item (click)="logout()" *ngIf="currentUser">
       Logout {{currentUser.email}}

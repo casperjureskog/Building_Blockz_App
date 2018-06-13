@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item *ngFor="let timelist of timelists" >
+  <ion-item *ngFor="let timelist of timelists" cache-content="false">
     Rum {{timelist.name}}
     <br>
     <br>

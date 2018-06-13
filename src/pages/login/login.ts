@@ -31,30 +31,14 @@ export class LoginPage {
       this.currentUser = undefined;
       this.loginPopUp()
       this.initializeApp();
-
-        // used for an example of ngFor and navigation
-        // this.pages = [
-        //   { title: 'Home', visible_for: 'all', component: HomePage }
-        // ];
-
     }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
-
-    // openPage(page) {
-    //   // Reset the content nav to have just this page
-    //   // we wouldn't want the back button to show in this scenario
-    //   this.navCtrl.push(HomePage);
-    // }
-
-
     test() {
       console.log('popup');
       let confirm = this.alertCtrl.create({
