@@ -53,44 +53,38 @@ In order to use the app, the tenant must register and login.
 #### Start view
 
 <br>
-<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/src/assets/readme_images/home.jpg" />
+<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/home.jpg" />
 <br>
 
-#### Login form:
+#### News view
 
 <br>
-<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/signin.png" />
+<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/news.jpg" />
 <br>
 
 ### Send Help Request message
 This is the tab where the tenant can write and send the help request message to the administrator of the building.
 
 <br>
-<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/message_request.png" />
+<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/helprequest.jpg" />
 <br>
 
 ### List of Facilities
 This is the tab where tenants can find the facilities available in their building/community
 
 <br>
-<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/facilities.png" />
+<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/facilities.jpg" />
 <br>
 
 ### Book a facility
 This is where the tenants can check and book facilities
 
 <br>
-<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/booking.png" />
-<br>
-
-View of facilities availability
-
-<br>
-<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/booked.png" />
+<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/booking.jpg" />
 <br>
 
 
 ## Authors
-**Casper Jureskog** - https://github.com/casperjureskog <br>
+**Casper Jureskog** - https://github.com/casperjureskog <br><br>
 **Fabian Lundgren** - https://github.com/fabianlundgren<br>
 **Johan Schantz** - https://github.com/Scharrre97<br>
