@@ -53,7 +53,7 @@ In order to use the app, the tenant must register and login.
 #### Start view
 
 <br>
-<img src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/home.jpg" />
+<img width="250" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/home.jpg" />
 <br>
 
 #### News view
