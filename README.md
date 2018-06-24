@@ -11,28 +11,49 @@ In order to organize the features needed for our project and track our progress,
 [Pivotal Tracker for Building blocks](https://www.pivotaltracker.com/n/projects/2007795).
 
 **GitHub**
-[GitHub Pages](https://github.com/casperjureskog/ionic2-port/tree/master).
+[GitHub Pages](https://github.com/casperjureskog/ionic2-port.git
+.
 
 ### Ionic
 The Ionic Framework command line utility makes it easy to start, build, run, and emulate Ionic apps. In addition, it comes with (optional!) integration with the Ionic Cloud, a set of mobile backend services perfect for Ionic apps.
 
-```bash
+Install:
+node.js https://nodejs.org/en/download/
+Xcode https://developer.apple.com/xcode/
+
+Download app by:
+```
+git clone https://github.com/casperjureskog/ionic2-port.git
+```
+and then run:
+
+```
 $ sudo npm install -g ionic cordova
-$ ionic start
 ```
 
-### Run the application
+
+
+### Run the application on iOS and OSX
 In your terminal run the following command to start a local server and run the application
+
+(To see login and first page in the browser on OSX)
 ```
-$ ionic serve -c --lab
+ionic serve
 ```
+
+to run in emulator mode
+```
+ionic cordova build ios
+ionic cordova emulate ios
+```
+
 ### Create user account
 In order to use the app, the tenant must register and login.
 
-#### Registration form:
+#### Start view
 
 <br>
-<img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/registration.png" />
+<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/src/assets/readme_images/home.jpg" />
 <br>
 
 #### Login form:
