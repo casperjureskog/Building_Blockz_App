@@ -6,14 +6,8 @@ import { TimeslotsService } from '../../providers/timeslots-service/timeslots-se
 import { LocalNotifications } from 'ionic-native';
 import { AlertController } from 'ionic-angular';
 import * as moment from 'moment';
-import { HomePage } from '../home/home';
 import { FacilitiesPage } from '../facilities/facilities';
-/**
- * Generated class for the BookPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({

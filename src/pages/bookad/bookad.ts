@@ -3,12 +3,6 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { TimelistsServiceProvider } from '../../providers/timelists-service/timelists-service';
 import { BookingsService } from '../../providers/bookings-service/bookings-service';
 import { HomePage } from '../home/home';
-/**
- * Generated class for the BookadPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

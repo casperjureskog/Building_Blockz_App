@@ -24,8 +24,8 @@ export class LoginPage {
     public navCtrl: NavController,
     private _tokenService: Angular2TokenService) {
       this._tokenService.init({
-        apiBase: 'http://localhost:3000/api/v1'
-         // apiBase: 'https://building-blockz.herokuapp.com/api/v1'
+        //apiBase: 'http://localhost:3000/api/v1'
+          apiBase: 'https://building-blockz.herokuapp.com/api/v1'
       });
 
       this.currentUser = undefined;

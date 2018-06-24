@@ -17,6 +17,7 @@ export class FacilitiesPage {
   facilities: any;
   picker: any;
   colNr: boolean;
+  data: any;
 
 
   constructor(public navCtrl: NavController,
@@ -31,7 +32,7 @@ getFacilities(){
   .then(data => {
     this.facilities = data;
     if (data) {
-      this.colNr = (data.length > 2) ? true : false;
+      this.colNr = true;
     }
   });
 }
