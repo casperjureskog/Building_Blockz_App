@@ -53,34 +53,34 @@ In order to use the app, the tenant must register and login.
 #### Start view
 
 <br>
-<img width="250" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/home.jpg" />
+<img width="300" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/home.jpg" />
 <br>
 
 #### News view
 
 <br>
-<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/news.jpg" />
+<img width="300" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/news.jpg" />
 <br>
 
 ### Send Help Request message
 This is the tab where the tenant can write and send the help request message to the administrator of the building.
 
 <br>
-<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/helprequest.jpg" />
+<img width="300" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/helprequest.jpg" />
 <br>
 
 ### List of Facilities
 This is the tab where tenants can find the facilities available in their building/community
 
 <br>
-<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/facilities.jpg" />
+<img width="300" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/facilities.jpg" />
 <br>
 
 ### Book a facility
 This is where the tenants can check and book facilities
 
 <br>
-<img height="550" width="700" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/booking.jpg" />
+<img width="300" src = "https://github.com/casperjureskog/ionic2-port/blob/readme_update2/src/assets/readme_images/booking.jpg" />
 <br>
 
 
