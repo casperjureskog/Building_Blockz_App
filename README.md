@@ -1,6 +1,6 @@
 # Building_blocks_mobile
 
-Building Blocks Mobile App is the last project for CraftAcademy Cohort (Feb-April 2017). This is the app for housing community that will allow tenants to send help message request, book a facility using their mobile phone, be updated with the latest events/news in their community.
+Building Blocks Mobile App is refinement of the last project for CraftAcademy Cohort (Feb-April 2017). This is the app for housing community that will allow tenants to send help message request, book a facility using their mobile phone, be updated with the latest events/news in their community.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for deployment and testing purposes.  See deployment for notes on how to deploy the project on a live system.
