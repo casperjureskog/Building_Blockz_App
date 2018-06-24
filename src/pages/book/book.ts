@@ -6,14 +6,8 @@ import { TimeslotsService } from '../../providers/timeslots-service/timeslots-se
 import { LocalNotifications } from 'ionic-native';
 import { AlertController } from 'ionic-angular';
 import * as moment from 'moment';
-import { HomePage } from '../home/home';
 import { FacilitiesPage } from '../facilities/facilities';
-/**
- * Generated class for the BookPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -24,6 +18,7 @@ import { FacilitiesPage } from '../facilities/facilities';
               TimeslotsService
               ],
 })
+
 export class BookPage {
 
   facility: any;
@@ -59,41 +54,41 @@ getBookings(id, date, start_time, end_time){
   this.bookingsService.getBookings(id, date, start_time, end_time)
   // console.log(data);
   LocalNotifications.schedule({
-  title: "Din bokning är Klockan "+start_time,
-  text: 'Rum '+this.facility.name+' kl '+start_time,
-  at: new Date(moment(date+' '+start_time).subtract(3, 'hours').format()),
-  sound: null
+    title: "Din bokning är Klockan "+start_time,
+    text: 'Rum '+this.facility.name+' kl '+start_time,
+    at: new Date(moment(date+' '+start_time).subtract(3, 'hours').format()),
+    sound: null
   });
 
-this.navCtrl.push(BookPage, {
-date: date, id: id
-})
-let toast = this.toastCtrl.create({
-message: `Tack för din bokning`,
-duration: 2000
-});
-toast.present();
+  this.navCtrl.push(BookPage, {
+    date: date, id: id
+  })
+  let toast = this.toastCtrl.create({
+    message: `Tack för din bokning`,
+    duration: 2000
+  });
+  toast.present();
 }
 
 presentToast(message_text) {
-let toast = this.toastCtrl.create({
-message: message_text,
-duration: 3000,
-position: 'bottom'
-});
+  let toast = this.toastCtrl.create({
+    message: message_text,
+    duration: 3000,
+    position: 'bottom'
+  });
 
-toast.onDidDismiss(() => {
-console.log('Medelande skickat');
-});
+  toast.onDidDismiss(() => {
+    console.log('Medelande skickat');
+  });
 
-toast.present();
+  toast.present();
 }
 
 deleteBookings(id, ids, date){
   this.bookingsService.deleteBookings(id, ids)
-this.navCtrl.push(BookPage, {
-date: date, id: id
-})
+  this.navCtrl.push(BookPage, {
+    date: date, id: id
+  })
 }
 
 getTimeslots(id, date){
@@ -105,7 +100,7 @@ getTimeslots(id, date){
 
 go_to_face(){
   this.navCtrl.push(FacilitiesPage, {
-  val: 'test'
+    val: 'test'
   })
 }
 }

@@ -9,10 +9,6 @@ import { HelprequestPage } from '../helprequest/helprequest';
 import { Angular2TokenService } from 'angular2-token';
 import { BuildingsService } from '../../providers/buildings-service/buildings-service';
 import { LoginPage } from '../login/login';
-import * as moment from 'moment';
-import * as _ from "lodash";
-
-
 
 @Component({
   selector: 'page-home',
@@ -35,8 +31,8 @@ export class HomePage {
               {
 
       this.getBuilding(); this._tokenService.init({
-      apiBase: 'http://localhost:3000/api/v1'
-      // apiBase: 'https://building-blockz.herokuapp.com/api/v1'
+      // apiBase: 'http://localhost:3000/api/v1'
+      apiBase: 'https://building-blockz.herokuapp.com/api/v1'
     });
     this.getBuilding();
     this.currentUser = undefined;

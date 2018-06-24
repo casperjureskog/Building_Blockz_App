@@ -14,22 +14,37 @@ import * as moment from 'moment';
 
 })
 export class FacilitiesPage {
-
   facilities: any;
   picker: any;
+  colNr: boolean;
+  data: any;
 
 
-  constructor(public navCtrl: NavController, private facilitiesService:FacilitiesService, private datePicker: DatePicker) {
-    this.getFacilities();
-}
+  constructor(public navCtrl: NavController,
+              private facilitiesService:FacilitiesService,
+              private datePicker: DatePicker) {
+                this.getFacilities();
+              }
 
 
 getFacilities(){
   this.facilitiesService.getFacilities()
-    .then(data => {
-      this.facilities = data;
-    });
+  .then(data => {
+    this.facilities = data;
+    if (data) {
+      this.colNr = true;
+    }
+  });
 }
+
+buttonSize(f_nr) {
+  if (f_nr) {
+    return {height: '130px' ,width: '130px'}
+  } else {
+    return {height: '200px' ,width: '200px'}
+  }
+}
+
 
 pickers(id){
 this.datePicker.show({
@@ -43,12 +58,7 @@ this.datePicker.show({
   err => console.log('Error occurred while getting date: ', err)
 );
 }
-// getData(date, id) {
-//   console.log(date, id);
-//   this.navCtrl.push(BookPage, {
-//   date: date, id: id
-//   })
-// }
+
 go_to_home(){
   this.navCtrl.push(HomePage, {
   val: 'test'

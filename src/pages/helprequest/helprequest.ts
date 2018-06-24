@@ -28,10 +28,8 @@ export class HelprequestPage {
 
 
 
-  getHelprequests(title, message){
-    console.log(title, message);
-
-    this.hrService.getHelprequests(title, message)
+  getHelprequests(title, message, urgent){
+    this.hrService.getHelprequests(title, message, urgent)
     this.navCtrl.push(HomePage)
     let toast = this.toastCtrl.create({
     message: `Meddelande skickat`,

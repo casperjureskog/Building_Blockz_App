@@ -11,16 +11,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-item *ngFor="let timelist of timelists" cache-content="false">
-    Rum {{timelist.name}}
-    <br>
-    <br>
-    {{timelist.start_time}} - {{timelist.end_time}}
-    <br>
-    <br>
-    <button ion-button small color="danger" (click)="deleteBookings(timelist.id, timelist.idb)">
-      Delete
-    </button>
-  </ion-item>
+<ion-content padding >
+  <h1 style="color: #fff;">Dina bokningar</h1>
+  <div *ngFor="let timelist of timelists">
+    <ion-card class="cards">
+      <ion-card-header class="alingLeft">
+        {{timelist.name}}
+      </ion-card-header>
+      <ion-card-content class="alingLeft">
+        Bookat: {{timelist.start_time}} - {{timelist.end_time}}
+        <br />
+        <button ion-button small color="danger" (click)="deleteBookings(timelist.id, timelist.idb)" style="margin-left: -1px;">
+          Delete
+        </button>
+      </ion-card-content>
+    </ion-card>
+    <br />
+  </div>
 </ion-content>

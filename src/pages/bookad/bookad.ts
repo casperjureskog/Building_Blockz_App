@@ -3,12 +3,6 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { TimelistsServiceProvider } from '../../providers/timelists-service/timelists-service';
 import { BookingsService } from '../../providers/bookings-service/bookings-service';
 import { HomePage } from '../home/home';
-/**
- * Generated class for the BookadPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -28,17 +22,15 @@ export class BookadPage {
 getTimelists(){
   this.timelistsServiceProvider.getTimelists()
     .then(data => {
-      // console.log(data);
       this.timelists = data;
     });
 }
 
 deleteBookings(id, ids){
-  console.log(id, ids);
   this.bookingsService.deleteBookings(id, ids)
-this.navCtrl.push(BookadPage, {
-id: id
-})
+  this.navCtrl.push(BookadPage, {
+    id: id
+  })
 }
 
 go_to_home(){

@@ -14,15 +14,19 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label floating>Title</ion-label>
+      <ion-label>Title</ion-label>
       <ion-input type="text" [(ngModel)]="title"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>Description</ion-label>
+      <ion-label>Description</ion-label>
       <ion-input type="text" [(ngModel)]="message"></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label style="color: #999;">Ugent</ion-label>
+      <ion-toggle type="text" [(ngModel)]="urgent"></ion-toggle>
+    </ion-item>
   </ion-list>
-  <button class="button" style="background-color:rgba(0,0,0,0); width: 100%;" (click)="getHelprequests(title, message)">
+  <button class="button" style="background-color:rgba(0,0,0,0); width: 100%;" (click)="getHelprequests(title, message, urgent)">
     <div style="padding: 18px;" class="unbooked" >
     <h4 class="availble">Save</h4>
     </div>
