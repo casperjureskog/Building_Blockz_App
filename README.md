@@ -17,9 +17,9 @@ In order to organize the features needed for our project and track our progress,
 ### Ionic
 The Ionic Framework command line utility makes it easy to start, build, run, and emulate Ionic apps. In addition, it comes with (optional!) integration with the Ionic Cloud, a set of mobile backend services perfect for Ionic apps.
 
-Install:
-node.js https://nodejs.org/en/download/
-Xcode https://developer.apple.com/xcode/
+Install:<br>
+node.js https://nodejs.org/en/download/<br>
+Xcode https://developer.apple.com/xcode/<br>
 
 Download app by:
 ```
@@ -38,13 +38,13 @@ In your terminal run the following command to start a local server and run the a
 
 (To see login and first page in the browser on OSX)
 ```
-ionic serve
+$ ionic serve
 ```
 
 to run in emulator mode
 ```
-ionic cordova build ios
-ionic cordova emulate ios
+$ ionic cordova build ios
+$ ionic cordova emulate ios
 ```
 
 ### Create user account
